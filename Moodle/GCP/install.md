@@ -203,3 +203,13 @@ lang: zh-tw
         ```shell
         sudo unzip filename.zip
         ```
+
+### CentOS Stream 9
+- Install php
+    ```shell
+    sudo yum install php
+    ```
+- Can't install many php extension in one line
+    ```shell
+    dnf install -y php-mysqlnd php php-cli php-common php-fpm php-zip php-gd php-intl php-xmlrpc php-soap php-sodium
+    ```
