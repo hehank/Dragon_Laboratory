@@ -1,0 +1,2 @@
+- [AWS 入門](https://ithelp.ithome.com.tw/articles/10233280)
+- [Amazon_EC2_Cloud_Services_Installation](https://docs.moodle.org/311/en/Amazon_EC2_Cloud_Services_Installation)

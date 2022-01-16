@@ -1,0 +1,2 @@
+- [在 Azure 上部署 Moodle——你應該知道的事情](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/deploying-moodle-on-azure-things-you-should-know/ba-p/814054)
+- [moodle-on-azure](https://giters.com/robece/moodle-on-azure)

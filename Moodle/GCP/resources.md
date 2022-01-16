@@ -1,0 +1,1 @@
+- [Guide to Setup a Moodle website in Google Cloud Platform (GCP) with HTTPS](https://dev.to/nekotokun/guide-to-setup-a-moodle-website-in-google-cloud-platform-gcp-with-https-2f63)
