@@ -34,7 +34,7 @@ lang: zh-tw
 		```shell
 		sudo yum update
 		```
-    2. Install httpd server
+    2. Install apache server
     	```shell
     	sudo yum install httpd
     	```
@@ -144,6 +144,10 @@ lang: zh-tw
     9. ![](https://i.imgur.com/AwLjDLM.png)
     10. ![](https://i.imgur.com/SHM4e4k.png)
     11. ![](https://i.imgur.com/zUqWK1Q.png)
+5. Login moodle
+    1. Connect to [http://35.236.165.53/moodle/](http://35.236.165.53/moodle/)
+    2. ![](https://i.imgur.com/VyPIdzH.png)
+    3. ![](https://i.imgur.com/U9UnsQf.png)
 
 # Types
 ### Others
