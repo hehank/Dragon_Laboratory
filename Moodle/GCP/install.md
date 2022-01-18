@@ -6,7 +6,7 @@ lang: zh-tw
 
 {%hackmd theme-dark %}
 
-# Step
+# Moodle setup on GCP step
 1. Creat a new GCP VM
     1. ![](https://i.imgur.com/MerxoUq.png)
     2. ![](https://i.imgur.com/0lHV77A.png)
@@ -31,72 +31,72 @@ lang: zh-tw
 
 3. Creat Moodle
     1. Update system & all package
-		```shell
+		```shell=
 		sudo yum update
 		```
     2. Install apache server
-    	```shell
+    	```shell=
     	sudo yum install httpd
     	```
     3. Start httpd server
-    	```shell
+    	```shell=
     	sudo systemctl start httpd.service
     	```
     4. Install PHP7.3
-        ```shell
+        ```shell=
     	sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
     	sudo dnf install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
     	sudo dnf module list php
     	sudo dnf module enable php:remi-7.3 -y
     	```
     5. Install PHP extension
-        ```shell
+        ```shell=
     	dnf install -y php-mysqlnd php php-cli php-common php-fpm php-zip php-gd php-intl php-xmlrpc php-soap php-sodium
     	```
     6. Check version
-    	```shell
+    	```shell=
     	php -v
     	```
     7. Install mariadb
-		```shell
+		```shell=
 		sudo yum install mariadb mariadb-server
 		```
     8. Start server
-    	```shell
+    	```shell=
     	sudo systemctl start mariadb
     	```
     9. Login(root)
-    	```shell
+    	```shell=
     	sudo mysql -u root -p
     	```
         > Password => Press Enter key
     10. Init mariadb
     	1. Creat database
-    	    ```sql
+    	    ```sql=
     	    create database YourDataBaseName;
     	    ```
     	2. Creat user
-    	    ```sql
+    	    ```sql=
     	    CREATE USER 'username'@'%' IDENTIFIED BY 'PASSWORD';
     	    ```
     	3. Add permission
-    		```sql
+    		```sql=
     		GRANT ALL PRIVILEGES ON *.* TO 'username'@'%' IDENTIFIED BY 'PASSWORD';
     	    ```
     	4. Reload the grant tables(授權表)
-    	    ```sql
+    	    ```sql=
     	    FLUSH PRIVILEGES;
     	    ```
         5. Logout mysql
-            ```sql
+            ```sql=
             quit
             ```
     11. Open selinux config
-    	```shell
+    	```shell=
     	sudo vim /etc/selinux/config
     	```
     12. Chang enforcing SELinux to disable
-    	```shell
+    	```shell=
     	SELINUX=enforcing
     	      to
     	SELINUX=disable
@@ -104,31 +104,31 @@ lang: zh-tw
     13. Download
 	    - [download.moodle.org](https://download.moodle.org/releases/latest/)
 	    1. Install wget
-	        ```shell
+	        ```shell=
 	        sudo yum install wget
 	        ```
 	    2. Go to /var/www/html
-	        ```shell
+	        ```shell=
 	        cd /var/www/html
 	        ```
 	    3. Download moodle package
-	        ```shell
+	        ```shell=
 	    	sudo wget https://download.moodle.org/download.php/direct/stable311/moodle-3.11.4.tgz
 	        ```
 	    4. Install tar command
-	        ```shell
+	        ```shell=
 	        sudo yum install tar
 	        ```
 	    5. Decompression 
-	        ```shell
+	        ```shell=
 	        sudo tar -zxvf moodle-3.11.4.tgz
 	        ```
     14. Creat moodledata directory（Can't creat on /var/www/html）
-    	```shell
+    	```shell=
     	sudo mkdir /your_path/moodledata
     	```
 	15. Change folder permission
-		```shell
+		```shell=
 		sudo chown -R apache:apache moodledata/
         sudo chown -R apache:apache moodle/
 		```
@@ -149,17 +149,53 @@ lang: zh-tw
     2. ![](https://i.imgur.com/VyPIdzH.png)
     3. ![](https://i.imgur.com/U9UnsQf.png)
 
+# Upload video to Moodle
+1. Change post max size
+    1. Edit php.ini (Because Moodle is written in PHP)
+        ```shell=
+        sudo vim /etc/php.ini
+        ```
+    2. Press `/` key
+        ![](https://i.imgur.com/5essm9s.png)
+    3. Enter `post_max` and press `Enter` key
+        ![](https://i.imgur.com/EAg6NAB.png)
+    4. You can see this config and specific a size you want
+        ![](https://i.imgur.com/ZSuYlpN.png)
+        ```ini=
+        post_max_size = [size + unit]
+        # KB => K, MB => M, GB => G
+        ```
+    5. Save your change
+        1. Press `:`
+        2. Enter `wq`
+        3. Press `Enter` key
+        ![](https://i.imgur.com/es0Oor9.png)
+    6. Reboot your VM
+        ```shell=
+        sudo reboot
+        ```
+2. ![](https://i.imgur.com/OTaOCaw.png)
+3. ![](https://i.imgur.com/5QHLicy.png)
+4. ![](https://i.imgur.com/McZ3UNX.png)
+5. ![](https://i.imgur.com/8BMjPbw.png)
+6. ![](https://i.imgur.com/SdZJ0Ht.png)
+7. ![](https://i.imgur.com/WWFYi1H.png)
+8. ![](https://i.imgur.com/pUQKOaV.png)
+9. ![](https://i.imgur.com/xjnavhO.png)
+10. ![](https://i.imgur.com/GlyiAHx.png)
+11. ![](https://i.imgur.com/hbSigjj.png)
+
 # Types
 ### Others
 - ifconfig command not found
-    ```shell
+    ```shell=
     sudo yum install net-tools
     ```
 
 ### Apache
 - [virtualhost_example](https://httpd.apache.org/docs/2.4/vhosts/examples.html)
 - Creat Virtualhost
-    ```shell
+    ```shell=
     sudo vim /etc/httpd/conf.d/moodle.conf
     ```
 - moodle.conf
@@ -170,50 +206,50 @@ lang: zh-tw
     </VirtualHost>
     ```
 - check server status
-    ```shell
+    ```shell=
     sudo systemctl status httpd.service
     ```
 
 ### php 7.3
 - Verify php-mysqlnd
-    ```shell
+    ```shell=
     php -m | grep -i mysql
     ```
 ### mariadb
 - Reset admin password
     - Login(root)
-        ```shell
+        ```shell=
         sudo mysql -u root -p
         ```
     - Select your database
-        ```sql
+        ```sql=
         use moodle;
         ```
     - Change your user's password
-    	```sql
+    	```sql=
     	UPDATE mdl_user SET password=MD5('admin') WHERE username='admin';
         ```
 
 ### moodle
 - If you want download moodle-3.11.4.zip
-    ```shell
+    ```shell=
 	sudo wget https://download.moodle.org/download.php/direct/stable311/moodle-3.11.4.zip
 	```
     - Install unzip command
-        ```shell
+        ```shell=
         sudo yum install unzip
         ```
     - Decompression
-        ```shell
+        ```shell=
         sudo unzip filename.zip
         ```
 
 ### CentOS Stream 9
 - Install php
-    ```shell
+    ```shell=
     sudo yum install php
     ```
 - Can't install many php extension in one line
-    ```shell
+    ```shell=
     dnf install -y php-mysqlnd php php-cli php-common php-fpm php-zip php-gd php-intl php-xmlrpc php-soap php-sodium
     ```
