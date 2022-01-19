@@ -4,6 +4,9 @@ tags: Python lib
 lang: zh-tw
 ---
 
+[![hackmd-github-sync-badge](https://hackmd.io/gAiL1VS9RHCiYsnc025YbA/badge)](https://hackmd.io/gAiL1VS9RHCiYsnc025YbA)
+
+
 {%hackmd theme-dark %}
 
 # parse
