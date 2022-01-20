@@ -18,6 +18,9 @@ lang: zh-tw
 3. 設定 OBS
     1. ![](https://i.imgur.com/y7FbUAU.png)
     2. ![](https://i.imgur.com/W8yxsnt.png)
+    3. ![](https://i.imgur.com/mvcTO9v.png)
+    4. ![](https://i.imgur.com/KVag4M4.png)
+    5. ![](https://i.imgur.com/9Jsuw9Y.png)
 4. 測試結果
     - [video](../video/)
 
