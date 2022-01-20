@@ -19,7 +19,7 @@ lang: zh-tw
     1. ![](https://i.imgur.com/y7FbUAU.png)
     2. ![](https://i.imgur.com/W8yxsnt.png)
 4. 測試結果
-    
+    - [video](../video/)
 
 # Reference
 - [我要如何在 OBS 改變聲音？](https://tw.imyfone.com/voice-tips/obs-voice-changer/)
