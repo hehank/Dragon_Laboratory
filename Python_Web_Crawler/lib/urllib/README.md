@@ -17,16 +17,16 @@ from urllib.parse import urlparse
 - 用來剖析 URL
 - 用法：
     ```python=
-    varable_name = urlparse('your_URL')
+    o = urlparse('your_URL')
     ```
 - 屬性(attributes)：
     |屬性|說明|
     |---|----|
-    |varable_name.scheme|取得通訊協定|
-    |varable_name.netloc|取得網域名稱|
-    |varable_name.port|取得通訊埠的埠號|
-    |varable_name.path|取得網頁的路徑|
-    |varable_name.query|取得查詢字串|
+    |o.scheme|取得通訊協定|
+    |o.netloc|取得網域名稱|
+    |o.port|取得通訊埠的埠號|
+    |o.path|取得網頁的路徑|
+    |o.query|取得查詢字串|
 - Ex：
     ```python=
     from urllib.parse import urlparse
