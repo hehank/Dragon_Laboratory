@@ -15,15 +15,15 @@ from requests import get
 - 用來發送 HTTP request
 - 用法：
     ```python=
-    variable_name = get(URL)
+    response = get(URL)
     ```
 - 屬性(attributes)：
     |屬性|說明|
     |---|----|
-    |variable_name.text|編碼過後的檔案內容|
-    |variable_name.contents|未編碼過(Bytes)的檔案內容，適用非文字內容的 HTTP 請求|
-    |variable_name.encoding|取得檔案內容的編碼|
-    |variable_name.status_code|狀態碼，值 200 或 requests.codes.ok 表示請求成功|
+    |response.text|編碼過後的檔案內容|
+    |response.contents|未編碼過(Bytes)的檔案內容，適用非文字內容的 HTTP 請求|
+    |response.encoding|取得檔案內容的編碼|
+    |response.status_code|狀態碼，值 200 或 requests.codes.ok 表示請求成功|
 - Ex：
     ```python=
     from requests import get
