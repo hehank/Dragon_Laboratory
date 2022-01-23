@@ -13,7 +13,9 @@ if response.status_code == 200:
 
     for tag in tags:
         href = tag.get("href", None)
-        print(href)
+
+        if ((href != "#") and (href != None) and ("#" not in href) and ("http" in href) and ("http" in href)):
+            print(href)
 
 else:
     print("HTTP Request Rrror")
