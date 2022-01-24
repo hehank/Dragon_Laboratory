@@ -1,0 +1,1 @@
+This is ch06 practice.
