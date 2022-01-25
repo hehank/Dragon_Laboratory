@@ -9,8 +9,7 @@ from bs4 import BeautifulSoup
 def write_to_csv(items, csv_filename):
     with open(csv_filename, mode='w', encoding='utf-8', newline='') as fp:
         writer = csv.writer(fp)
-        for item in items:
-            writer.writerow(item)
+        writer.writerows(items)
 
 
 url = "https://movies.yahoo.com.tw/movie_thisweek.html?page=1"
