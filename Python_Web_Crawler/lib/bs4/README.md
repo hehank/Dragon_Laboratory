@@ -39,11 +39,11 @@ tags = soup("Specific_HTML_tag")
     tag = tags[12] # => 第 13 個
     ```
 - 屬性或方法：
-    | 屬性或方法                          | 說明                                                                                |
-    | ----------------------------------- | ----------------------------------------------------------------------------------- |
-    | tag.text                            | 取得 HTML 標籤內容                                                                  |
-    | tag.attrs                           | 取得所有 HTML 標籤屬性和值(以字典類型儲存)                                          |
-    | tag["HTML_Tag_Attribute"]           | 取得 HTML 標籤內屬性為 HTML_Tag_Attribute 的值                                      |
+    | 屬性或方法 | 說明 |
+    | -------- | ---- |
+    | tag.text | 取得 HTML 標籤內容 |
+    | tag.attrs | 取得所有 HTML 標籤屬性和值(以字典類型儲存) |
+    | tag["HTML_Tag_Attribute"] | 取得 HTML 標籤內屬性為 HTML_Tag_Attribute 的值 |
     | tag.get("HTML_Tag_Attribute", None) | 取得 HTML 標籤內屬性為 HTML_Tag_Attribute 的值，若沒有此屬性，就傳回第二個參數 None |
 - Ex1：
     ```python=
@@ -100,12 +100,12 @@ tags = soup("Specific_HTML_tag")
     https://fchart.github.io/Elements.html
     ```
 - 方法：
-    | 方法         | 說明                                                                       |
-    | ------------ | -------------------------------------------------------------------------- |
-    | select_one() | 使用 CSS 選擇器(selector)的觀念尋找元素，回傳`第一個`符合的物件            |
-    | select()     | 使用 CSS 選擇器(selector)的觀念尋找元素，回傳`所有`符合的物件串列          |
-    | find()       | 使用標籤名稱和屬性值來搜尋 HTML 標籤，回傳`第一個`符合的 HTML 標籤物件     |
-    | find_all()   | 使用標籤名稱和屬性值來搜尋 HTML 標籤，回傳`所有`符合的 HTML 標籤物件的串列 |
+    | 方法 | 說明 |
+    | --- | ---- |
+    | select_one() | 使用 CSS 選擇器(selector)的觀念尋找元素，回傳`第一個`符合的物件 |
+    | select() | 使用 CSS 選擇器(selector)的觀念尋找元素，回傳`所有`符合的物件串列  |
+    | find() | 使用標籤名稱和屬性值來搜尋 HTML 標籤，回傳`第一個`符合的 HTML 標籤物件 |
+    | find_all() | 使用標籤名稱和屬性值來搜尋 HTML 標籤，回傳`所有`符合的 HTML 標籤物件的串列 |
 ### select() & select_one()：
 ```python=
 # select()
@@ -142,21 +142,21 @@ tag = soup.find(["HTML_Tag_Name" | ["HTML_Tag_Name"] | {attribute:"value"}], [cl
 tags = soup.find_all(["HTML_Tag_Name" | ["HTML_Tag_Name"] | {attribute:"value"}], [class_="class_Name"], [attribute="value" | re.compile("value") | True], [attrs={attribute:"value"}], [limit=n], [recursive=False], [string="str" | ["str"] | re.compile("value")])
 ```
 - 說明：
-    | 參數                                           | 說明                                                                                  |
-    | ---------------------------------------------- | ------------------------------------------------------------------------------------- |
-    | "HTML_Tag_Name"                                | HTML 標籤名稱                                                                         |
-    | ["HTML_Tag_Name"]                              | 可用來搜尋多個符合的 HTML 標籤(只要符合其中一個就算)，例：[td","th"]                  |
-    | {attribute:"value"}                            | 利用 HTML 標籤的屬性來搜尋(要全部符合)，例：{"class":"sister","name":"title"}         |
-    | class_="class_Name"                            | 標籤中的 class 名稱                                                                   |
-    | attribute="value"                              | 例：id="link"                                                                         |
-    | attribute=re.compile("regular_expression_str") | 例：href=re.compile("elsie"))                                                         |
-    | attribute=True                                 | 所有包含此 attribute 的標籤，例：class=True                                           |
-    | attrs={attribute:"value"}                      | 只能用來搜尋自訂義的屬性和一般搜尋時無法搜尋到的標籤，例：attrs={"data-foo": "value"} |
-    | limit=n                                        | 限制指搜尋 n 個符合條件的                                                             |
-    | recursive=False                                | 指搜尋某個標籤的第一層子節點，預設 True                                               |
-    | string="str"                                   | 例：string="Hank"                                                                     |
-    | string=["str"]                                 | 例：string=["Hank", "Jack"]                                                           |
-    | string=re.compile("value")                     | 例：string=re.compile("Dormouse")                                                     |
+    |參數|說明|
+    |---|----|
+    |"HTML_Tag_Name"|HTML 標籤名稱|
+    |["HTML_Tag_Name"]|可用來搜尋多個符合的 HTML 標籤(只要符合其中一個就算)，例：[td","th"]|
+    |{attribute:"value"}|利用 HTML 標籤的屬性來搜尋(要全部符合)，例：{"class":"sister","name":"title"}|
+    |class_="class_Name"|標籤中的 class 名稱|
+    |attribute="value"|例：id="link"|
+    |attribute=re.compile("regular_expression_str")|例：href=re.compile("elsie"))|
+    |attribute=True|所有包含此 attribute 的標籤，例：class=True|
+    |attrs={attribute:"value"}|只能用來搜尋自訂義的屬性和一般搜尋時無法搜尋到的標籤，例：attrs={"data-foo": "value"}|
+    |limit=n|限制指搜尋 n 個符合條件的|
+    |recursive=False|指搜尋某個標籤的第一層子節點，預設 True|
+    |string="str"|例：string="Hank"|
+    |string=["str"]|例：string=["Hank", "Jack"]|
+    |string=re.compile("value")|例：string=re.compile("Dormouse")|
 - Ex：
 ```python=
 # find()
