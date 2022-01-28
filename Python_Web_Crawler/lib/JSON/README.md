@@ -49,7 +49,7 @@ import json
 ```
 ## JSON 資料對應的 Python 資料型別
 | Python 資料型別          | JSON 資料    |
-| :----------------------- | :----------- |
+|:------------------------ |:------------ |
 | dict(字典)               | JSON 物件    |
 | list(串列)               | JSON 陣列    |
 | str(字串)                | string(字串) |
@@ -59,7 +59,7 @@ import json
 
 ## Python 字典 -> JSON 字串
 ```python=
-json.dumps(data, fp, sort_keys=False, indent=0)
+json.dumps(data, fp, sort_keys=False, indent=None, ensure_ascii=True)
 ```
 - 說明：
     - data：Python 字典。
@@ -67,6 +67,9 @@ json.dumps(data, fp, sort_keys=False, indent=0)
         - EX："example.json"
     - sort_keys：等於 True 的時候，會按照 Key 來排序。
     - indent：可以設定顯示 Key-Value 時的縮排。
+    - ensure_ascii：
+        - True：以 `\uxxxx` 格式寫入。
+        - False：以`你設定的`格式寫入。
 ### Ex：
 - .py
 	```python=
@@ -119,7 +122,7 @@ json.loads(json_str)
 ### 寫入 .json 檔案
 - 將 python 資料轉成 .json 檔案
 	```python=
-	json.dump(data, fp)
+	json.dump(data, fp, sort_keys=False, indent=None, ensure_ascii=True)
 	```
 - Ex：
     - .py：
