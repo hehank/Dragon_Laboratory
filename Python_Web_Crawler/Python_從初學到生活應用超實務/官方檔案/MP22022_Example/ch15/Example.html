@@ -1,0 +1,46 @@
+<html class="line">
+ <head class="line">
+  <meta charset="utf-8" class="line"/>
+  <title class="line">
+   Example.html
+  </title>
+  <style class="line" type="text/css">
+   .blue { color: blue; }
+.red { color: red; }
+.green { color: green; }
+.line { border: 1px solid #333; }
+  </style>
+  <script class="line" src="jquery-3.1.0.min.js">
+  </script>
+  <script class="line">
+   $(document).ready(function() {
+   $('*').addClass('line');
+   $('p').addClass('blue');
+   $('#list').addClass('red');
+   $('.item').addClass('green');
+});
+  </script>
+ </head>
+ <body class="line">
+  <p class="line blue">
+   Python 網路資料擷取
+  </p>
+  <p class="line blue">
+   建立網路爬蟲程式
+  </p>
+  <ol class="line red" id="list">
+   <li class="line">
+    CSS選擇器
+   </li>
+   <li class="item line green">
+    XPath表達式
+   </li>
+   <li class="line">
+    正規表達式
+   </li>
+   <li class="item line green">
+    DOM瀏覽方法
+   </li>
+  </ol>
+ </body>
+</html>

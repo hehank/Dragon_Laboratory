@@ -1,0 +1,4 @@
+[0716/100043.126:ERROR:process_reader_win.cc(123)] NtOpenThread: {拒絕存取} 程序已請求存取一物件，但未被授與存取權。 (0xc0000022)
+[0716/100043.127:ERROR:exception_snapshot_win.cc(98)] thread ID 8740 not found in process
+[0716/100043.306:ERROR:process_reader_win.cc(123)] NtOpenThread: {拒絕存取} 程序已請求存取一物件，但未被授與存取權。 (0xc0000022)
+[0716/100043.306:ERROR:exception_snapshot_win.cc(98)] thread ID 19260 not found in process
